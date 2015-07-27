@@ -5,6 +5,8 @@ gem "activesupport", "< 4.0.0", :group => :compat_testing, :platform => "ruby"
 
 gem 'chef-config', path: "chef-config"
 
+# gem 'ohai', github: 'chef/ohai', branch: 'mcquin/ohai-config/remove-config-log'
+
 group(:docgen) do
   gem "tomlrb"
   gem "yard"

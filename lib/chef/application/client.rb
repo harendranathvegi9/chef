@@ -399,6 +399,7 @@ class Chef::Application::Client < Chef::Application
         end
 
         @signal = nil
+
         run_chef_client(Chef::Config[:specific_recipes])
 
         Chef::Application.exit!("Exiting", 0) if !Chef::Config[:interval]
@@ -410,7 +411,7 @@ class Chef::Application::Client < Chef::Application
           Chef::Log.debug("#{e.class}: #{e}\n#{e.backtrace.join("\n")}")
           retry
         else
-          Chef::Application.fatal!("#{e.class}: #{e.message}", 1)
+          Chef::Application.fatal!("#{e.class}: #{e.message}\n #{e.backtrace.join("\n")}", 1)
         end
       end
     end

@@ -33,6 +33,5 @@ platforms:
 suites:
   - name: webapp
     run_list:
-      - recipe[apt::default]
       - recipe[webapp::default]
     attributes:

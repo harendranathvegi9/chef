@@ -401,6 +401,9 @@ class Chef
       # Log a fatal error message to both STDERR and the Logger, exit the application
       def fatal!(msg, err = -1)
         Chef::Log.fatal(msg)
+        Chef::Log.fatal("Chef::Config.ohai[:log_level] is #{Chef::Config.ohai[:log_level]} (#{Chef::Config.ohai[:log_level].class})")
+        Chef::Log.fatal("Configuration: #{Chef::Config.configuration}")
+        Chef::Log.fatal(caller.join("\n"))
         Process.exit err
       end
 
