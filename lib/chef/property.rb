@@ -89,9 +89,6 @@ class Chef
       options[:name_property] = options.delete(:name_attribute) if options.has_key?(:name_attribute) && !options.has_key?(:name_property)
       @options = options
 
-      if options.has_key?(:default)
-        options[:default] = options[:default].freeze
-      end
       options[:name] = options[:name].to_sym if options[:name]
       options[:instance_variable_name] = options[:instance_variable_name].to_sym if options[:instance_variable_name]
     end

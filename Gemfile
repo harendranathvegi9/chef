@@ -3,6 +3,7 @@ gemspec :name => "chef"
 
 gem "activesupport", "< 4.0.0", :group => :compat_testing, :platform => "ruby"
 
+gem 'mixlib-log', github: 'chef/mixlib-log', branch: 'jk/warn_once'
 gem 'chef-config', path: "chef-config"
 
 group(:docgen) do
